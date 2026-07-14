@@ -19,6 +19,13 @@
 
 交換が仮合意に進んだ後の連絡は、一時的な非公開手段で行い、完了後に不要な個人情報を削除します。
 
+## ルールと運営
+
+- [`RULES.md`](RULES.md) — 参加者向けの交換ルール
+- [`project/OPERATIONS.md`](project/OPERATIONS.md) — 募集から完了までの運営手順
+- [`PRIVATE_OPS.md`](PRIVATE_OPS.md) — 個人情報を扱う境界
+- [`project/exchange-records/TEMPLATE.md`](project/exchange-records/TEMPLATE.md) — 交換記録テンプレート
+
 ## データの更新
 
 サイトの現在地は、次の2ファイルから自動表示されます。
