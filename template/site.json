@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "project_name": "あなたの交換プロジェクト",
+  "tagline": "モノの次の使い道を、公開する。",
+  "hero_line_1": "モノの価値を、",
+  "hero_line_2": "次の人へつなぐ。",
+  "description": "物々交換の提案、判断、受け渡し、記録をGitHubで公開するオープンプロジェクトです。",
+  "repository_url": "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY",
+  "proposal_url": "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY/issues/new?template=exchange-proposal.yml",
+  "rules_url": "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY/blob/main/RULES.md",
+  "reuse_url": "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY/blob/main/REUSE.md",
+  "accent_color": "#ff681c",
+  "theme_color": "#ff681c",
+  "locale": "ja"
+}
