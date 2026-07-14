@@ -8,6 +8,7 @@
 - サイトや文章の改善: `改善提案` Issue Form
 - まだ結論を求めない相談: GitHub Discussions
 - 具体的な修正: 関連Issueを作成した後にPull Request
+- 派生プロジェクトの掲載: `PROJECTS.md` を更新するPull Request
 
 交換提案の詳細条件は [`RULES.md`](RULES.md) を確認してください。
 
@@ -36,3 +37,8 @@
 4. `python3 scripts/check-public-data.py` を実行する
 5. サイト表示をPCとスマートフォンで確認する
 6. 交換記録の更新ではPrivacy Checkを実施する
+7. コード・文書・参加者コンテンツのライセンス区分を確認する
+
+## 再利用と派生
+
+コードはMIT、運営文書とテンプレートはCC BY 4.0で再利用できます。派生プロジェクトは原プロジェクトと誤認されない名称を使い、`CONTENT-LICENSE.md` に従ってクレジットを表示してください。
