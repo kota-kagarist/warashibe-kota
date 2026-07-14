@@ -2,7 +2,20 @@
 
 > 交換は、次の使い道で決める。
 
-モノとモノの交換を通じて、価格だけでは測れない価値と物語の変化を記録する公開プロジェクトです。
+モノとモノの交換を通じて、価格だけでは測れない価値と物語の変化を記録する公開プロジェクトです。同時に、同じ取り組みを始めたい人がコピーできる**OSSスターター**として運営しています。
+
+## 自分の交換プロジェクトを始める
+
+このリポジトリをGitHub Templateとして複製し、初期化スクリプトを実行すると、サイト・ルール・Issueフォーム・運営手順をまとめて再利用できます。
+
+```bash
+python3 scripts/bootstrap.py \
+  --name "あなたのプロジェクト名" \
+  --tagline "あなたのタグライン" \
+  --repo "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY"
+```
+
+詳しい手順: [`REUSE.md`](REUSE.md)
 
 ## このリポジトリで公開するもの
 
@@ -11,7 +24,7 @@
 - 交換ルールと判断基準
 - 交換提案の受付と公開検討
 - サイト改善、運営改善、意思決定の履歴
-- GitHub Projectによる進捗
+- 再利用用テンプレートと初期化スクリプト
 
 ## 公開しないもの
 
@@ -25,15 +38,15 @@
 - [`project/OPERATIONS.md`](project/OPERATIONS.md) — 募集から完了までの運営手順
 - [`PRIVATE_OPS.md`](PRIVATE_OPS.md) — 個人情報を扱う境界
 - [`project/exchange-records/TEMPLATE.md`](project/exchange-records/TEMPLATE.md) — 交換記録テンプレート
+- [`REUSE.md`](REUSE.md) — コピーして開始する手順
 
-## データの更新
+## サイトの設定とデータ
 
-サイトの現在地は、次の2ファイルから自動表示されます。
-
+- `docs/data/site.json` — 名称、タグライン、リンク、テーマ色
 - `docs/data/project.json` — 現在の状態と交換品
 - `docs/data/exchanges.json` — 公開可能な交換履歴
 
-交換が成立したら、Issueで経緯を整理し、Pull RequestでJSONと記録を更新します。`main`へのマージ後、GitHub Pagesへ自動反映されます。
+交換が成立したら、Issueで経緯を整理し、Pull RequestでJSONと記録を更新します。`main`へのマージ後、GitHub Pagesへ反映されます。
 
 ## ローカル確認
 
@@ -53,11 +66,10 @@ python3 -m http.server 8000 --directory docs
 | Projects | Inboxから完了までの進捗管理 |
 | Pages | 公開サイト |
 
-## 初期セットアップ
-
-`project/GITHUB_SETUP.md` に、Pages・Discussions・Projects・ラベルの設定手順を記載しています。
-
 ## ライセンス
 
-- サイトのソースコード: `LICENSE-CODE`（MIT License）
-- 文章、交換記録、写真などのコンテンツ: `CONTENT-LICENSE.md`
+- コード: MIT License (`LICENSE-CODE`)
+- ルール、運営文書、テンプレート、サンプル: CC BY 4.0 (`CONTENT-LICENSE.md`)
+- 詳細な区分: [`LICENSE.md`](LICENSE.md)
+
+プロジェクト名・ロゴ・実際の参加者コンテンツは、ライセンス対象外または個別条件です。コピー時は名称を変更してください。
