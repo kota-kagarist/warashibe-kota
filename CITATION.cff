@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you reuse this project starter, please cite the repository."
+title: "Open Barter Project Starter / わらしべコウタ"
+type: software
+authors:
+  - name: "Warashibe Kota contributors"
+repository-code: "https://github.com/kota-kagarist/warashibe-kota"
+url: "https://kota-kagarist.github.io/warashibe-kota/"
+license: MIT
+version: 1.0.0
+date-released: 2026-07-14

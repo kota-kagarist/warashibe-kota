@@ -16,4 +16,32 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
-      - run: python3 scripts/check-public-data.py
+      - name: Validate current public data
+        run: python3 scripts/check-public-data.py
+      - name: Compile Python scripts
+        run: python3 -m py_compile scripts/check-public-data.py scripts/bootstrap.py
+      - name: Test copied-project bootstrap
+        shell: bash
+        run: |
+          temp_dir="$(mktemp -d)"
+          cp -a . "$temp_dir/repository"
+          cd "$temp_dir/repository"
+          python3 scripts/bootstrap.py \
+            --name "Template Test Project" \
+            --tagline "Test the copied project." \
+            --repo "https://github.com/example/template-test"
+          python3 scripts/check-public-data.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          site = json.loads(Path("docs/data/site.json").read_text(encoding="utf-8"))
+          project = json.loads(Path("docs/data/project.json").read_text(encoding="utf-8"))
+          exchanges = json.loads(Path("docs/data/exchanges.json").read_text(encoding="utf-8"))
+
+          assert site["project_name"] == "Template Test Project"
+          assert site["repository_url"] == "https://github.com/example/template-test"
+          assert project["current_exchange"] == 0
+          assert exchanges == []
+          assert Path("project/exchange-records/000-preparing.md").exists()
+          PY

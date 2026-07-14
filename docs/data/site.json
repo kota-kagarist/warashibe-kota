@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "project_name": "わらしべコウタ",
+  "tagline": "交換は、次の使い道で決める。",
+  "hero_line_1": "交換は、",
+  "hero_line_2": "次の使い道で決める。",
+  "description": "ひとつのモノを、誰かが必要とする次のモノへ。値段だけでは測れない価値と物語の変化を、GitHubですべて公開します。",
+  "repository_url": "https://github.com/kota-kagarist/warashibe-kota",
+  "proposal_url": "https://github.com/kota-kagarist/warashibe-kota/issues/new?template=exchange-proposal.yml",
+  "rules_url": "https://github.com/kota-kagarist/warashibe-kota/blob/main/RULES.md",
+  "reuse_url": "https://github.com/kota-kagarist/warashibe-kota/blob/main/REUSE.md",
+  "accent_color": "#ff681c",
+  "theme_color": "#ff681c",
+  "locale": "ja"
+}
