@@ -1,0 +1,37 @@
+name: 改善提案
+description: サイト、ルール、運営方法への改善案
+title: "[改善] "
+labels: ["type:improvement", "status:inbox"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: 対象
+      options:
+        - サイト表示
+        - 文章・説明
+        - 交換ルール
+        - プライバシー・安全
+        - GitHub運用
+        - その他
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 現在の問題
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 改善案
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 公開確認
+      options:
+        - label: 個人を特定できる情報を含めていません。
+          required: true
