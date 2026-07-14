@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "preparing",
+  "status_label": "PREPARING",
+  "status_title": "最初の一品を準備中。",
+  "status_description": "スタート地点になるモノが決まり次第、状態・背景・交換条件を公開します。",
+  "current_exchange": 0,
+  "cash_used_yen": 0,
+  "public_personal_data_count": 0,
+  "offers_open": false,
+  "current_item": {
+    "status_label": "● NOT OPEN FOR OFFERS YET",
+    "name": "最初のモノを、選んでいます。",
+    "description": "小さすぎず、大げさすぎず、交換相手が使い道を想像できるものから始めます。",
+    "badge": "ITEM PHOTO / COMING SOON"
+  },
+  "repository_url": "https://github.com/kota-kagarist/warashibe-kota"
+}
