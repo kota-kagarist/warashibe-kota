@@ -1,55 +1,123 @@
 name: 交換提案
 description: 現在のモノとの交換案を公開提案する
 title: "[交換提案] "
-labels: ["type:exchange", "status:inbox"]
+labels: ["type:exchange", "status:inbox", "privacy:check-required"]
 body:
   - type: markdown
     attributes:
       value: |
-        このIssueは公開されます。本名、住所、電話番号、メールアドレス、勤務先、追跡番号、受け渡し場所を書かないでください。
+        このIssueは公開され、撤回後も記録として残る場合があります。本名、住所、電話番号、メールアドレス、勤務先、追跡番号、受け渡し場所を書かないでください。写真の配送ラベル、顔、家の外観、車両番号、位置情報にも注意してください。
+
+        提案前に [交換ルール](../../RULES.md) を確認してください。提案は先着順ではありません。
+
   - type: input
     id: item
     attributes:
       label: 提案するモノ
-      description: メーカー名や型番は、公開して問題ない範囲で記載してください。
-      placeholder: 例）コンパクトなコーヒーミル
+      description: メーカー名、商品名、型番を公開して問題ない範囲で記載してください。
+      placeholder: 例）HARIO コーヒーミル MSS-1TB
     validations:
       required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: カテゴリ
+      options:
+        - 家電・デジタル機器
+        - キッチン・生活用品
+        - アウトドア・スポーツ用品
+        - 本・文具・ホビー
+        - 衣類・バッグ・服飾品
+        - その他の現物
+    validations:
+      required: true
+
   - type: textarea
     id: condition
     attributes:
-      label: 状態と付属品
-      description: 傷、使用歴、不具合、付属品の有無を正直に記載してください。個人情報が写った写真は添付しないでください。
+      label: 状態、使用歴、不具合
+      description: 入手時期・使用期間の目安、傷、汚れ、不具合、修理歴、動作未確認箇所を正直に記載してください。
+      placeholder: |
+        使用期間: 約2年
+        動作: 確認済み
+        傷・不具合: 側面に小傷。機能上の問題なし
     validations:
       required: true
+
+  - type: textarea
+    id: accessories
+    attributes:
+      label: 付属品と欠品
+      description: 箱、説明書、ケーブル、パーツなど、付属する物と欠けている物を記載してください。
+    validations:
+      required: true
+
+  - type: input
+    id: size
+    attributes:
+      label: おおよその寸法・重量
+      description: 配送可能性を確認するための目安です。正確でなくても構いません。
+      placeholder: 例）30 × 20 × 15cm、約1.5kg
+    validations:
+      required: true
+
+  - type: textarea
+    id: photos
+    attributes:
+      label: 公開可能な写真
+      description: 全体、傷、不具合、付属品が分かる写真を添付してください。EXIF位置情報と個人情報を削除してください。
+    validations:
+      required: true
+
   - type: textarea
     id: reason
     attributes:
-      label: 交換したい理由
-      description: なぜ現在のモノと交換したいか、交換後にどう使いたいかを記載してください。
+      label: 交換したい理由と交換後の使い道
+      description: なぜ現在のモノと交換したいか、受け取った後にどう使いたいかを記載してください。
     validations:
       required: true
+
   - type: dropdown
     id: delivery
     attributes:
       label: 想定する受け渡し方法
       options:
-        - 郵送を希望
-        - 手渡しも検討可能
+        - 国内郵送を希望
+        - 安全な公共の場所での手渡しも検討可能
         - どちらでもよい
-        - まだ決めていない
     validations:
       required: true
+
+  - type: dropdown
+    id: shipping_timing
+    attributes:
+      label: 仮合意後の発送時期
+      options:
+        - 3営業日以内
+        - 1週間以内
+        - 相談したい
+    validations:
+      required: true
+
   - type: checkboxes
     id: confirmations
     attributes:
       label: 確認事項
       options:
-        - label: 違法品、危険物、医薬品、衛生上問題のある物、権利侵害品ではありません。
+        - label: 私は18歳以上で、日本国内で交換できます。
           required: true
-        - label: このIssueが公開されることを理解しています。
+        - label: このモノを正当に所有し、交換する権限があります。
           required: true
-        - label: 個人を特定できる情報を記載していません。
+        - label: 違法品、盗品、模倣品、危険物、医薬品、金券、衛生上問題のある物ではありません。
           required: true
-        - label: 提案が採用されない場合があることを理解しています。
+        - label: 傷、欠品、不具合、動作未確認箇所を隠していません。
+          required: true
+        - label: 送料は原則として自分が発送する分を負担します。
+          required: true
+        - label: このIssueが公開され、撤回後も匿名化した記録が残る場合があることを理解しています。
+          required: true
+        - label: 個人を特定できる情報を記載・添付していません。
+          required: true
+        - label: 提案が採用されない場合や、運営判断で中止される場合があることを理解しています。
           required: true
