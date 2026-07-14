@@ -1,0 +1,13 @@
+[
+  {
+    "number": 0,
+    "status": "preparing",
+    "title": "準備中",
+    "summary": "最初の一品を選び、公開する情報を整えています。",
+    "from_item": null,
+    "to_item": null,
+    "completed_at": null,
+    "public_issue": null,
+    "decision_record": "project/decisions/000-project-start.md"
+  }
+]
