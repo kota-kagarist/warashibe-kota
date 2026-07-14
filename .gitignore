@@ -1,0 +1,8 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local-only operational files
+.private/
+*.local.json
