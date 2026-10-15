@@ -73,3 +73,11 @@ python3 -m http.server 8000 --directory docs
 - 詳細な区分: [`LICENSE.md`](LICENSE.md)
 
 プロジェクト名・ロゴ・実際の参加者コンテンツは、ライセンス対象外または個別条件です。コピー時は名称を変更してください。
+
+## 作業の入口
+
+- 作業ルール: [AGENTS.md](AGENTS.md)
+- 現在地・未完了・次の一手: [project/OPERATIONS.md](project/OPERATIONS.md)
+- Claude向けの入口: [CLAUDE.md](CLAUDE.md)
+
+現在地は上記の既存正本だけで更新する。テンプレートと同じファイル名に合わせるために、別のPROJECT.mdやTODO台帳を増やさない。
