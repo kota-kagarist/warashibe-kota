@@ -6,3 +6,8 @@
 # Local-only operational files
 .private/
 *.local.json
+
+# Local credentials; examples must contain dummy values only.
+.env
+.env.*
+!.env.example

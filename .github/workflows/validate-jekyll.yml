@@ -1,0 +1,36 @@
+name: Validate Jekyll output
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with production Jekyll action
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Check public files and agent-document exclusions
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          output = Path("_site")
+          assert (output / "docs/index.html").is_file(), "public page missing"
+          data = json.loads((output / "docs/data/project.json").read_text())
+          source = json.loads(Path("docs/data/project.json").read_text())
+          assert data == source, "public project state changed during build"
+          forbidden = {"AGENTS.md", "AGENTS.html", "CLAUDE.md", "CLAUDE.html"}
+          leaked = [str(path) for path in output.rglob("*") if path.name in forbidden]
+          assert not leaked, f"agent documents leaked: {leaked}"
+          print("Jekyll output: public files preserved; agent documents excluded")
+          PY

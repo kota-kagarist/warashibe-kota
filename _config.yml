@@ -1,0 +1,4 @@
+# Agent instructions belong in GitHub, outside the generated website.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
